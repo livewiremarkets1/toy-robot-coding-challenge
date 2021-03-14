@@ -40,7 +40,7 @@ module RobotSimulator
       end
     end
 
-    context "check coordinates are within table" do
+    context "#is_within_table - coordinates" do
       it "should return true" do
         expect(subject.is_within_table?([0,3])).to be true
       end
@@ -67,7 +67,7 @@ module RobotSimulator
       end
     end
 
-    context "check valid place command" do
+    context "#is_valid_place command" do
       it "should return true" do
         expect(subject.is_valid_place?(['PLACE', 0, 0, 'NORTH'])).to be true
       end
