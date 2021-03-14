@@ -12,7 +12,7 @@ module RobotSimulator
         comm =  parse_place_command(comm) if comm.first.index(table.place_command)
         comm
       end
-      filtered_command_array = filter_valid_commands(command_array)
+      filter_valid_commands(command_array)
     end
 
     private
@@ -26,8 +26,7 @@ module RobotSimulator
         true
       end
       valid_place_index = get_first_place_index(command_array)
-      return [] unless valid_place_index
-      command_array[valid_place_index..-1]
+      valid_place_index ? (command_array[valid_place_index..-1]) : []
     end
 
     def get_first_place_index(command_array)
