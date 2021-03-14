@@ -38,7 +38,7 @@ module RobotSimulator
     end
 
     def report(current_positition)
-      puts  current_positition.join(',')
+      puts "Output: #{current_positition.join(',')}"
       current_positition
     end
 
@@ -52,7 +52,6 @@ module RobotSimulator
     def get_new_position(current_position, x_sym, y_sym)
       position = current_position.dup
       x, y, direction = position[0], position[1], position[2]
-      puts x, y, direction, coordinates.get_coordinates(direction.to_sym, x_sym)
       position[0] = x + coordinates.get_coordinates(direction.to_sym, x_sym)
       position[1] = y + coordinates.get_coordinates(direction.to_sym, y_sym)
       table.is_within_table?(position[0..1]) ? position : current_position
