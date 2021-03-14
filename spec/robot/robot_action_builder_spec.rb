@@ -9,12 +9,16 @@ module RobotSimulator
     end
 
     subject {RobotActionBuilder.new}
-    let!(:actions_list) {[["PLACE", "3", "0", "NORTH"], ["MOVE"], ["LEFT"], ["REPORT"], ["RIGHT"],
+    let!(:actions_list_1) {[["PLACE", "3", "0", "NORTH"], ["MOVE"], ["LEFT"], ["REPORT"], ["RIGHT"],
       ["PLACE", "3", "3", "SOUTH"], ["MOVE"], ["MOVE"], ["REPORT"], ["RIGHT"], ["REPORT"], ["REPORT"]]}
+    let!(:actions_list_2) {[["PLACE", "1","2","EAST"],["MOVE"],["MOVE"],["LEFT"],["MOVE"],["REPORT"]]}
 
     context "#perform_actions_list with valid input" do
       it "should perform all the actions" do
-        expect(subject.perform_actions_list(actions_list)).to eq([3, 1, "WEST"])
+        expect(subject.perform_actions_list(actions_list_1)).to eq([3, 1,"WEST"])
+      end
+      it "should perform all the actions" do
+        expect(subject.perform_actions_list(actions_list_2)).to eq([3,3,"NORTH"])
       end
     end
 
