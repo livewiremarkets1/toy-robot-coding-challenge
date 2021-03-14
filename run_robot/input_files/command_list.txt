@@ -1,0 +1,22 @@
+PLACE 3,0,NORTH
+MOVE
+LEFT
+REPORT
+RIGHT
+
+000
+111
+1 0 a b
+PLACE 3,3,SOUTH
+LEFT///
+MOVE
+MOVE
+
+REPORT
+dkfjlskdjflksf
+123123123
+MOVE 234234234
+RIGHT
+REPORT
+~~~~~~~~~~~~@@#$%&T^*&^*^*&^&*
+REPORT
