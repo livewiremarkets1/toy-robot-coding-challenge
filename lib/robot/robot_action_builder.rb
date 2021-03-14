@@ -30,8 +30,7 @@ module RobotSimulator
     def get_action_list(command_file_name)
       input_command_arr = []
       File.open(command_file_name, "r").each_line do |line|
-        data = line.split(/\n/)
-        input_command_arr << data
+        input_command_arr << line.split(/\n/)
       end
       input_command_list = @command_parser.parse_commands(input_command_arr)
     end

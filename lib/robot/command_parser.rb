@@ -25,9 +25,9 @@ module RobotSimulator
         end
         true
       end
-      place_index = get_first_place_index(command_array)
-      return [] unless place_index
-      command_array = command_array[place_index..-1]
+      valid_place_index = get_first_place_index(command_array)
+      return [] unless valid_place_index
+      command_array[valid_place_index..-1]
     end
 
     def get_first_place_index(command_array)
